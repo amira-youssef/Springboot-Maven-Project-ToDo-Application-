@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html layout:decorator="layout">
+    <head>
+        <title>Content page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div layout:fragment="content">
+
+                <h3 style="position: absolute;left: 38%;font-family: Verdana;font-size: 40px;top: 15.5%">DETAILS OF THE TASK</h3>
+                <dl class="row" style="position: absolute;left: 40%;top: 30%">
+                  <dt class="col-sm-3">Category</dt>
+                  <dd class="col-sm-9"><span class="badge badge-danger" th:text="${todo.category}">NEW</span></dd>
+
+                  <dt class="col-sm-3">Task Name</dt>
+                  <dd class="col-sm-9" th:text="${todo.name}">Name of the task</dd>
+                
+                </dl>
+
+                <p>
+                  <a th:href="@{/todos/{id}/edit(id=${todo.id})}" class="btn btn-primary"  style="position: absolute;left: 40%;width: 300px;top: 64%" href="#" role="button">Edit</a>
+                  <a th:href="@{/todos/{id}/delete(id=${todo.id})}" class="btn btn-outline-danger" href="#"  style="position: absolute;left: 40%;width: 300px;top: 56%" role="button">Delete</a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
+
